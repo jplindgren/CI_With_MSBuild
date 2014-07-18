@@ -34,7 +34,7 @@
 
     <ItemGroup>
         <Nuget Include=".\thirdparty\tools\Nuget\Nuget.exe" />
-        <NugetOutputDirectory Include=".\buildartifacts\packages" />
+        <NugetOutputDirectory Include=".\src\packages" />
     </ItemGroup>
     
     <Target Name="Clean">
