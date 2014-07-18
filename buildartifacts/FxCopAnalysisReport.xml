@@ -1,0 +1,434 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="c:\users\joaopaulo\documents\github\msbuildscript\thirdparty\tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="10.0">
+ <Namespaces>
+  <Namespace Name="MsBuildScript">
+   <Messages>
+    <Message Id="Ms" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-07-18 01:28:40Z" FixCategory="Breaking">
+     <Issue Name="Namespace" Certainty="85" Level="Error">Correct the casing of 'Ms' in namespace name 'MsBuildScript' by changing it to 'MS'.</Issue>
+    </Message>
+   </Messages>
+  </Namespace>
+  <Namespace Name="MsBuildScript.Controllers">
+   <Messages>
+    <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Active" Created="2014-07-18 01:28:40Z" FixCategory="Breaking">
+     <Issue Certainty="50" Level="Warning">Consider merging the types defined in 'MsBuildScript.Controllers' with another namespace.</Issue>
+    </Message>
+    <Message Id="Ms" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-07-18 01:28:40Z" FixCategory="Breaking">
+     <Issue Name="Namespace" Certainty="85" Level="Error">Correct the casing of 'Ms' in namespace name 'MsBuildScript.Controllers' by changing it to 'MS'.</Issue>
+    </Message>
+   </Messages>
+  </Namespace>
+  <Namespace Name="MsBuildScript.Filters">
+   <Messages>
+    <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Active" Created="2014-07-18 01:28:40Z" FixCategory="Breaking">
+     <Issue Certainty="50" Level="Warning">Consider merging the types defined in 'MsBuildScript.Filters' with another namespace.</Issue>
+    </Message>
+    <Message Id="Ms" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-07-18 01:28:40Z" FixCategory="Breaking">
+     <Issue Name="Namespace" Certainty="85" Level="Error">Correct the casing of 'Ms' in namespace name 'MsBuildScript.Filters' by changing it to 'MS'.</Issue>
+    </Message>
+   </Messages>
+  </Namespace>
+  <Namespace Name="MsBuildScript.Models">
+   <Messages>
+    <Message Id="Ms" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-07-18 01:28:40Z" FixCategory="Breaking">
+     <Issue Name="Namespace" Certainty="85" Level="Error">Correct the casing of 'Ms' in namespace name 'MsBuildScript.Models' by changing it to 'MS'.</Issue>
+    </Message>
+   </Messages>
+  </Namespace>
+ </Namespaces>
+ <Targets>
+  <Target Name="C:\Users\JoaoPaulo\Documents\GitHub\MsBuildScript\buildartifacts\MsBuildScript.dll">
+   <Modules>
+    <Module Name="msbuildscript.dll">
+     <Messages>
+      <Message TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210" Status="Active" Created="2014-07-18 01:28:40Z" FixCategory="NonBreaking">
+       <Issue Name="NoStrongName" Certainty="95" Level="CriticalError">Sign 'MsBuildScript.dll' with a strong name key.</Issue>
+      </Message>
+      <Message Id="Ms" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2014-07-18 01:28:40Z" FixCategory="Breaking">
+       <Issue Name="Assembly" Certainty="85" Level="Error">Correct the casing of 'Ms' in assembly name 'MsBuildScript.dll' by changing it to 'MS'.</Issue>
+      </Message>
+      <Message TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014" Status="Active" Created="2014-07-18 01:28:40Z" FixCategory="NonBreaking">
+       <Issue Certainty="95" Level="Error">Mark 'MsBuildScript.dll' with CLSCompliant(true) because it exposes externally visible types.</Issue>
+      </Message>
+     </Messages>
+     <Namespaces>
+      <Namespace Name="MsBuildScript">
+       <Types>
+        <Type Name="BundleConfig" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="StaticHolderTypesShouldNotHaveConstructors" Category="Microsoft.Design" CheckId="CA1053" Status="Active" Created="2014-07-18 01:28:40Z" FixCategory="Breaking">
+           <Issue Name="CSharp2_0" Certainty="90" Level="Error">Because type 'BundleConfig' contains only 'static' members, mark it as 'static' to prevent the compiler from adding a default public constructor.</Issue>
+          </Message>
+         </Messages>
+         <Members>
+          <Member Name="#RegisterBundles(System.Web.Optimization.BundleCollection)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2014-07-18 01:28:40Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="c:\Users\JoaoPaulo\Documents\GitHub\MsBuildScript\src\MsBuildScript\App_Start" File="BundleConfig.cs" Line="8">In externally visible method 'BundleConfig.RegisterBundles(BundleCollection)', validate parameter 'bundles' before using it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="FilterConfig" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="StaticHolderTypesShouldNotHaveConstructors" Category="Microsoft.Design" CheckId="CA1053" Status="Active" Created="2014-07-18 01:28:40Z" FixCategory="Breaking">
+           <Issue Name="CSharp2_0" Certainty="90" Level="Error">Because type 'FilterConfig' contains only 'static' members, mark it as 'static' to prevent the compiler from adding a default public constructor.</Issue>
+          </Message>
+         </Messages>
+         <Members>
+          <Member Name="#RegisterGlobalFilters(System.Web.Mvc.GlobalFilterCollection)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2014-07-18 01:28:40Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="c:\Users\JoaoPaulo\Documents\GitHub\MsBuildScript\src\MsBuildScript\App_Start" File="FilterConfig.cs" Line="7">In externally visible method 'FilterConfig.RegisterGlobalFilters(GlobalFilterCollection)', validate parameter 'filters' before using it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="MvcApplication" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#Application_Start()" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2014-07-18 01:28:40Z" FixCategory="DependsOnFix">
+             <Issue Certainty="95" Level="Warning" Path="c:\Users\JoaoPaulo\Documents\GitHub\MsBuildScript\src\MsBuildScript" File="Global.asax.cs" Line="15">The 'this' parameter (or 'Me' in Visual Basic) of 'MvcApplication.Application_Start()' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="RouteConfig" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="StaticHolderTypesShouldNotHaveConstructors" Category="Microsoft.Design" CheckId="CA1053" Status="Active" Created="2014-07-18 01:28:40Z" FixCategory="Breaking">
+           <Issue Name="CSharp2_0" Certainty="90" Level="Error">Because type 'RouteConfig' contains only 'static' members, mark it as 'static' to prevent the compiler from adding a default public constructor.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="WebApiConfig" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#Register(System.Web.Http.HttpConfiguration)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2014-07-18 01:28:40Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="c:\Users\JoaoPaulo\Documents\GitHub\MsBuildScript\src\MsBuildScript\App_Start" File="WebApiConfig.cs" Line="9">In externally visible method 'WebApiConfig.Register(HttpConfiguration)', validate parameter 'config' before using it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="MsBuildScript.Controllers">
+       <Types>
+        <Type Name="AccountController" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#ExternalLogin(System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="1#" TypeName="UriParametersShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1054" Status="Active" Created="2014-07-18 01:28:40Z" FixCategory="Breaking">
+             <Issue Certainty="60" Level="Error" Path="c:\Users\JoaoPaulo\Documents\GitHub\MsBuildScript\src\MsBuildScript\Controllers" File="AccountController.cs" Line="176">Change the type of parameter 'returnUrl' of method 'AccountController.ExternalLogin(string, string)' from string to System.Uri, or provide an overload of 'AccountController.ExternalLogin(string, string)', that allows 'returnUrl' to be passed as a System.Uri object.</Issue>
+            </Message>
+            <Message Id="Login" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Status="Active" Created="2014-07-18 01:28:40Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error" Path="c:\Users\JoaoPaulo\Documents\GitHub\MsBuildScript\src\MsBuildScript\Controllers" File="AccountController.cs" Line="176">Replace the term 'Login' in member name 'AccountController.ExternalLogin(string, string)' with the preferred alternate 'LogOn'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ExternalLoginCallback(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="0#" TypeName="UriParametersShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1054" Status="Active" Created="2014-07-18 01:28:40Z" FixCategory="Breaking">
+             <Issue Certainty="60" Level="Error" Path="c:\Users\JoaoPaulo\Documents\GitHub\MsBuildScript\src\MsBuildScript\Controllers" File="AccountController.cs" Line="184">Change the type of parameter 'returnUrl' of method 'AccountController.ExternalLoginCallback(string)' from string to System.Uri, or provide an overload of 'AccountController.ExternalLoginCallback(string)', that allows 'returnUrl' to be passed as a System.Uri object.</Issue>
+            </Message>
+            <Message Id="Login" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Status="Active" Created="2014-07-18 01:28:40Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error" Path="c:\Users\JoaoPaulo\Documents\GitHub\MsBuildScript\src\MsBuildScript\Controllers" File="AccountController.cs" Line="184">Replace the term 'Login' in member name 'AccountController.ExternalLoginCallback(string)' with the preferred alternate 'LogOn'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ExternalLoginConfirmation(MsBuildScript.Models.RegisterExternalLoginModel,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="1#" TypeName="UriParametersShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1054" Status="Active" Created="2014-07-18 01:28:40Z" FixCategory="Breaking">
+             <Issue Certainty="60" Level="Error" Path="c:\Users\JoaoPaulo\Documents\GitHub\MsBuildScript\src\MsBuildScript\Controllers" File="AccountController.cs" Line="242">Change the type of parameter 'returnUrl' of method 'AccountController.ExternalLoginConfirmation(RegisterExternalLoginModel, string)' from string to System.Uri, or provide an overload of 'AccountController.ExternalLoginConfirmation(RegisterExternalLoginModel, string)', that allows 'returnUrl' to be passed as a System.Uri object.</Issue>
+            </Message>
+            <Message Id="Login" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Status="Active" Created="2014-07-18 01:28:40Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error" Path="c:\Users\JoaoPaulo\Documents\GitHub\MsBuildScript\src\MsBuildScript\Controllers" File="AccountController.cs" Line="213">Replace the term 'Login' in member name 'AccountController.ExternalLoginConfirmation(RegisterExternalLoginModel, string)' with the preferred alternate 'LogOn'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ExternalLoginFailure()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="Login" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Status="Active" Created="2014-07-18 01:28:40Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error" Path="c:\Users\JoaoPaulo\Documents\GitHub\MsBuildScript\src\MsBuildScript\Controllers" File="AccountController.cs" Line="250">Replace the term 'Login' in member name 'AccountController.ExternalLoginFailure()' with the preferred alternate 'LogOn'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ExternalLoginsList(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="0#" TypeName="UriParametersShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1054" Status="Active" Created="2014-07-18 01:28:40Z" FixCategory="Breaking">
+             <Issue Certainty="60" Level="Error" Path="c:\Users\JoaoPaulo\Documents\GitHub\MsBuildScript\src\MsBuildScript\Controllers" File="AccountController.cs" Line="256">Change the type of parameter 'returnUrl' of method 'AccountController.ExternalLoginsList(string)' from string to System.Uri, or provide an overload of 'AccountController.ExternalLoginsList(string)', that allows 'returnUrl' to be passed as a System.Uri object.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Login(MsBuildScript.Models.LoginModel,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="1#" TypeName="UriParametersShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1054" Status="Active" Created="2014-07-18 01:28:40Z" FixCategory="Breaking">
+             <Issue Certainty="60" Level="Error" Path="c:\Users\JoaoPaulo\Documents\GitHub\MsBuildScript\src\MsBuildScript\Controllers" File="AccountController.cs" Line="33">Change the type of parameter 'returnUrl' of method 'AccountController.Login(LoginModel, string)' from string to System.Uri, or provide an overload of 'AccountController.Login(LoginModel, string)', that allows 'returnUrl' to be passed as a System.Uri object.</Issue>
+            </Message>
+            <Message Id="Login" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Status="Active" Created="2014-07-18 01:28:40Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error" Path="c:\Users\JoaoPaulo\Documents\GitHub\MsBuildScript\src\MsBuildScript\Controllers" File="AccountController.cs" Line="33">Replace the term 'Login' in member name 'AccountController.Login(LoginModel, string)' with the preferred alternate 'LogOn'.</Issue>
+            </Message>
+            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2014-07-18 01:28:40Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="c:\Users\JoaoPaulo\Documents\GitHub\MsBuildScript\src\MsBuildScript\Controllers" File="AccountController.cs" Line="34">In externally visible method 'AccountController.Login(LoginModel, string)', validate parameter 'model' before using it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Login(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="0#" TypeName="UriParametersShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1054" Status="Active" Created="2014-07-18 01:28:40Z" FixCategory="Breaking">
+             <Issue Certainty="60" Level="Error" Path="c:\Users\JoaoPaulo\Documents\GitHub\MsBuildScript\src\MsBuildScript\Controllers" File="AccountController.cs" Line="22">Change the type of parameter 'returnUrl' of method 'AccountController.Login(string)' from string to System.Uri, or provide an overload of 'AccountController.Login(string)', that allows 'returnUrl' to be passed as a System.Uri object.</Issue>
+            </Message>
+            <Message Id="Login" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Status="Active" Created="2014-07-18 01:28:40Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error" Path="c:\Users\JoaoPaulo\Documents\GitHub\MsBuildScript\src\MsBuildScript\Controllers" File="AccountController.cs" Line="22">Replace the term 'Login' in member name 'AccountController.Login(string)' with the preferred alternate 'LogOn'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Manage(MsBuildScript.Models.LocalPasswordModel)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Active" Created="2014-07-18 01:28:40Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="c:\Users\JoaoPaulo\Documents\GitHub\MsBuildScript\src\MsBuildScript\Controllers" File="AccountController.cs" Line="138">Modify 'AccountController.Manage(LocalPasswordModel)' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+             <Issue Certainty="95" Level="CriticalError" Path="c:\Users\JoaoPaulo\Documents\GitHub\MsBuildScript\src\MsBuildScript\Controllers" File="AccountController.cs" Line="160">Modify 'AccountController.Manage(LocalPasswordModel)' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+            </Message>
+            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2014-07-18 01:28:40Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="c:\Users\JoaoPaulo\Documents\GitHub\MsBuildScript\src\MsBuildScript\Controllers" File="AccountController.cs" Line="137">In externally visible method 'AccountController.Manage(LocalPasswordModel)', validate parameter 'model' before using it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Register(MsBuildScript.Models.RegisterModel)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2014-07-18 01:28:40Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="c:\Users\JoaoPaulo\Documents\GitHub\MsBuildScript\src\MsBuildScript\Controllers" File="AccountController.cs" Line="72">In externally visible method 'AccountController.Register(RegisterModel)', validate parameter 'model' before using it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="AccountController+ManageMessageId" Kind="Enum" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="NestedTypesShouldNotBeVisible" Category="Microsoft.Design" CheckId="CA1034" Status="Active" Created="2014-07-18 01:28:40Z" FixCategory="Breaking">
+           <Issue Certainty="90" Level="Error">Do not nest type 'AccountController.ManageMessageId'. Alternatively, change its accessibility so that it is not externally visible.</Issue>
+          </Message>
+         </Messages>
+         <Members>
+          <Member Name="#RemoveLoginSuccess" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="Login" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Status="Active" Created="2014-07-18 01:28:40Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error">Replace the term 'Login' in member name 'AccountController.ManageMessageId.RemoveLoginSuccess' with the preferred alternate 'LogOn'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="MsBuildScript.Filters">
+       <Types>
+        <Type Name="InitializeSimpleMembershipAttribute+SimpleMembershipInitializer" Kind="Class" Accessibility="Private" ExternallyVisible="False">
+         <Messages>
+          <Message TypeName="AvoidUninstantiatedInternalClasses" Category="Microsoft.Performance" CheckId="CA1812" Status="Active" Created="2014-07-18 01:28:40Z" FixCategory="NonBreaking">
+           <Issue Certainty="75" Level="Warning">'InitializeSimpleMembershipAttribute.SimpleMembershipInitializer' is an internal class that is apparently never instantiated. If so, remove the code from the assembly. If this class is intended to contain only static methods, consider adding a private constructor to prevent the compiler from generating a default constructor.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="MsBuildScript.Models">
+       <Types>
+        <Type Name="ExternalLogin" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message Id="Login" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Status="Active" Created="2014-07-18 01:28:40Z" FixCategory="Breaking">
+           <Issue Name="Type" Certainty="95" Level="Error">Replace the term 'Login' in type name 'ExternalLogin' with the preferred alternate 'LogOn'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="LoginModel" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message Id="Login" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Status="Active" Created="2014-07-18 01:28:40Z" FixCategory="Breaking">
+           <Issue Name="Type" Certainty="95" Level="Error">Replace the term 'Login' in type name 'LoginModel' with the preferred alternate 'LogOn'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="RegisterExternalLoginModel" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message Id="Login" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Status="Active" Created="2014-07-18 01:28:40Z" FixCategory="Breaking">
+           <Issue Name="Type" Certainty="95" Level="Error">Replace the term 'Login' in type name 'RegisterExternalLoginModel' with the preferred alternate 'LogOn'.</Issue>
+          </Message>
+         </Messages>
+         <Members>
+          <Member Name="#ExternalLoginData" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="Login" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Status="Active" Created="2014-07-18 01:28:40Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="95" Level="Error">Replace the term 'Login' in member name 'RegisterExternalLoginModel.ExternalLoginData' with the preferred alternate 'LogOn'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210">
+   <Name>Assemblies should have valid strong names</Name>
+   <Description>Either the assembly has no strong name, an invalid one, or the strong name is valid only because of the computer configuration. The assembly should not be deployed in this state. The most common causes of this are: 1) The assembly's contents were modified after it was signed. 2) The signing process failed. 3) The assembly was delay-signed. 4) A registry key existed that allowed the check to pass (where it would not have otherwise).</Description>
+   <Resolution Name="NoStrongName">Sign {0} with a strong name key.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182127(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalError</MessageLevel>
+   <File Name="designrules.dll" Version="10.0.0.0" />
+  </Rule>
+  <Rule TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020">
+   <Name>Avoid namespaces with few types</Name>
+   <Description>A namespace should generally have more than five types.</Description>
+   <Resolution Name="Default">Consider merging the types defined in '{0}' with another namespace.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182130(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="50">Warning</MessageLevel>
+   <File Name="designrules.dll" Version="10.0.0.0" />
+  </Rule>
+  <Rule TypeName="AvoidUninstantiatedInternalClasses" Category="Microsoft.Performance" CheckId="CA1812">
+   <Name>Avoid uninstantiated internal classes</Name>
+   <Description>An internal class was detected that is apparently never instantiated. This rule does not attempt to detect late-bound creation and will generate false positives if instances of a type are only created in this way (for example, by means of Activator.CreateInstance or by passing the type as an argument to a TypeConverter constructor).</Description>
+   <Resolution Name="Default">{0} is an internal class that is apparently never instantiated. If so, remove the code from the assembly. If this class is intended to contain only static methods, consider adding a private constructor to prevent the compiler from generating a default constructor.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182265(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="performancerules.dll" Version="10.0.0.0" />
+  </Rule>
+  <Rule TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031">
+   <Name>Do not catch general exception types</Name>
+   <Description>You should not catch Exception or SystemException. Catching generic exception types can hide run-time problems from the library user, and can complicate debugging. You should catch only those exceptions that you can handle gracefully.</Description>
+   <Resolution Name="Default">Modify {0} to catch a more specific exception than {1} or rethrow the exception.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182137(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalError</MessageLevel>
+   <File Name="designrules.dll" Version="10.0.0.0" />
+  </Rule>
+  <Rule TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709">
+   <Name>Identifiers should be cased correctly</Name>
+   <Description>Type, namespace, and member identifiers are Pascal-cased. Parameter identifiers are camel-cased. Two letter acronyms within these identifiers should be upper-cased, for example, use System.IO instead of System.Io. Acronyms of three or more letters should be Pascal-cased, for example, use System.Xml instead of System.XML. The pascal-casing convention capitalizes the first letter of each word, as in BackColor. The camel-casing convention formats the first letter of the first word in lowercase and capitalizes the first letter of all subsequent words, as in backgroundColor. Although it may be common practice for some two letter acronyms to not be fully capitalized, violations of this rule should not be excluded for this reason. For example, 'DbConnection', is common but incorrect; use DBConnection. A violation of this rule might be required for compatibility with existing, non-managed symbol schemes. In general, however, these symbols should not be visible outside the assembly that uses them.</Description>
+   <Resolution Name="Assembly">Correct the casing of '{0}' in assembly name {1} by changing it to '{2}'.</Resolution>
+   <Resolution Name="Namespace">Correct the casing of '{0}' in namespace name '{1}' by changing it to '{2}'.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182240(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="85">Error</MessageLevel>
+   <File Name="namingrules.dll" Version="10.0.0.0" />
+  </Rule>
+  <Rule TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014">
+   <Name>Mark assemblies with CLSCompliantAttribute</Name>
+   <Description>Assemblies should explicitly state their CLS compliance using the CLSCompliant attribute. An assembly without this attribute is not CLS-compliant. Assemblies, modules, and types can be CLS-compliant even if some parts of the assembly, module, or type are not CLS-compliant. The following rules apply: 1) If the element is marked CLSCompliant, any noncompliant members must have the CLSCompliant attribute present with its argument set to false. 2) A comparable CLS-compliant alternative member must be supplied for each member that is not CLS-compliant.</Description>
+   <Resolution Name="Default">Mark {0} with CLSCompliant(true) because it exposes externally visible types.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182156(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="designrules.dll" Version="10.0.0.0" />
+  </Rule>
+  <Rule TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822">
+   <Name>Mark members as static</Name>
+   <Description>Methods which do not access instance data or call instance methods can be marked as static (Shared in Visual Basic). After doing so, the compiler will emit non-virtual call sites to these members which will prevent a check at runtime for each call that ensures the current object pointer is non-null. This can result in a measurable performance gain for performance-sensitive code. In some cases, the failure to access the current object instance represents a correctness issue.</Description>
+   <Resolution Name="Default">The 'this' parameter (or 'Me' in Visual Basic) of {0} is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms245046(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Warning</MessageLevel>
+   <File Name="performancerules.dll" Version="10.0.0.0" />
+  </Rule>
+  <Rule TypeName="NestedTypesShouldNotBeVisible" Category="Microsoft.Design" CheckId="CA1034">
+   <Name>Nested types should not be visible</Name>
+   <Description>Do not use public, protected or protected internal (Protected Friend) nested types as a way of grouping types. Use namespaces for this purpose. There are very limited scenarios where nested types are the best design. Also, nested type member accessibility is not clearly understood by all audiences. Enumerators are exempt from this rule.</Description>
+   <Resolution Name="Default">Do not nest type {0}. Alternatively, change its accessibility so that it is not externally visible.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182162(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="90">Error</MessageLevel>
+   <File Name="designrules.dll" Version="10.0.0.0" />
+  </Rule>
+  <Rule TypeName="StaticHolderTypesShouldNotHaveConstructors" Category="Microsoft.Design" CheckId="CA1053">
+   <Name>Static holder types should not have constructors</Name>
+   <Description>Instances of types that define only static members do not need to be created. Many compilers will automatically add a public default constructor if no constructor is specified. To prevent this, adding an empty private constructor may be required.</Description>
+   <Resolution Name="CSharp2_0">Because type {0} contains only 'static' members, mark it as 'static' to prevent the compiler from adding a default public constructor.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182169(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="90">Error</MessageLevel>
+   <File Name="designrules.dll" Version="10.0.0.0" />
+  </Rule>
+  <Rule TypeName="UriParametersShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1054">
+   <Name>URI parameters should not be strings</Name>
+   <Description>If a parameter name contains "uri" or "url" or "urn", and it's typed as string, the parameter type should be changed to System.Uri, unless there is an overload method where the same parameter is typed as System.Uri.</Description>
+   <Resolution Name="Default">Change the type of parameter {0} of method {1} from string to System.Uri, or provide an overload of {1}, that allows {0} to be passed as a System.Uri object.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182174(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="60">Error</MessageLevel>
+   <File Name="designrules.dll" Version="10.0.0.0" />
+  </Rule>
+  <Rule TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726">
+   <Name>Use preferred terms</Name>
+   <Description>Use preferred terms over deprecated alternates.</Description>
+   <Resolution Name="Member">Replace the term '{0}' in member name {1} with the preferred alternate '{2}'.</Resolution>
+   <Resolution Name="Type">Replace the term '{0}' in type name {1} with the preferred alternate '{2}'.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182258(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="namingrules.dll" Version="10.0.0.0" />
+  </Rule>
+  <Rule TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062">
+   <Name>Validate arguments of public methods</Name>
+   <Description>All reference arguments passed to externally visible methods should be checked against null (Nothing in VB). If appropriate, throw a System.ArgumentNullException when the argument is null.</Description>
+   <Resolution Name="Default">In externally visible method {0}, validate parameter '{1}' before using it.</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182182(VS.100).aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="10.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">Category</String>
+  <String Key="Certainty">Certainty</String>
+  <String Key="CollapseAll">Collapse All</String>
+  <String Key="CheckId">Check Id</String>
+  <String Key="Error">Error</String>
+  <String Key="Errors">error(s)</String>
+  <String Key="ExpandAll">Expand All</String>
+  <String Key="Help">Help</String>
+  <String Key="Line">Line</String>
+  <String Key="Messages">message(s)</String>
+  <String Key="LocationNotStoredInPdb">[Location not stored in Pdb]</String>
+  <String Key="Project">Project</String>
+  <String Key="Resolution">Resolution</String>
+  <String Key="Rule">Rule</String>
+  <String Key="RuleFile">Rule File</String>
+  <String Key="RuleDescription">Rule Description</String>
+  <String Key="Source">Source</String>
+  <String Key="Status">Status</String>
+  <String Key="Target">Target</String>
+  <String Key="Warning">Warning</String>
+  <String Key="Warnings">warning(s)</String>
+  <String Key="ReportTitle">Code Analysis Report</String>
+ </Localized>
+ <Exceptions>
+  <Exception Keyword="CA0060" Kind="Engine" TreatAsWarning="True">
+   <Type>Microsoft.FxCop.Sdk.FxCopException</Type>
+   <ExceptionMessage>The indirectly-referenced assembly 'System.Dynamic, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a' could not be found. This assembly is not required for analysis, however, analysis results could be incomplete. This assembly was referenced by: C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\Microsoft.CSharp.dll.</ExceptionMessage>
+  </Exception>
+ </Exceptions>
+</FxCopReport>

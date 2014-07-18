@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" 
+         ToolsVersion="4.0"
+         DefaultTargets="Test">
+    
+    <UsingTask AssemblyFile=".\thirdparty\tools\MsBuildAsyncExec\AsyncExec.dll" TaskName="AsyncExec.AsyncExec" />
+    <UsingTask AssemblyFile=".\thirdparty\tools\MSBuildCommunityTasks\MSBuild.Community.Tasks.dll" TaskName="MSBuild.Community.Tasks.XmlRead" />
+    <UsingTask AssemblyFile=".\thirdparty\tools\MSBuildCommunityTasks\MSBuild.Community.Tasks.dll" TaskName="MSBuild.Community.Tasks.FxCop" />
+    
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    </PropertyGroup>
+    
+    <ItemGroup>
+        <BuildArtifacts Include=".\buildartifacts\" />
+        <SolutionFile Include=".\MsBuildScript.sln" />
+        <Cassini Include="$(CommonProgramFiles)\Microsoft Shared\DevServer\10.0\WebDev.WebServer40.exe" />
+        <Website Include=".\buildartifacts\_PublishedWebsites\MsBuildScript" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <MsTest Include="$(MSBuildProgramFiles32)\Microsoft Visual Studio 10.0\Common7\IDE\MSTest.exe" />
+        <TestAssembly Include=".\buildartifacts\MsBuildScript.Tests.dll" />
+        <TestResults Include=".\buildartifacts\TestResults.xml" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <FxCop Include=".\thirdparty\tools\FxCop\FxCopCmd.exe" />
+        <AssembliesToAnalyze Include=".\buildartifacts\MsBuildScript.dll" />
+        <ReferencedAssemblies Include=".\buildartifacts\" />
+        <AnalysisReport Include=".\buildartifacts\FxCopAnalysisReport.xml" />
+    </ItemGroup>
+    
+    <Target Name="Clean">
+        <RemoveDir Directories="@(BuildArtifacts)" />
+    </Target>
+
+    <Target Name="Init" DependsOnTargets="Clean">
+        <MakeDir Directories="@(BuildArtifacts)" />
+    </Target>
+
+    <Target Name="Compile" DependsOnTargets="Init">
+        <MSBuild Projects="@(SolutionFile)" Targets="Rebuild" Properties="OutDir=%(BuildArtifacts.FullPath);Configuration=$(Configuration)" />
+    </Target>
+
+    <Target Name="Test" DependsOnTargets="Compile">
+        <Exec Command=' "@(MSTest)" /testcontainer:"@(TestAssembly)" /resultsfile:"@(TestResults)" '></Exec>
+    </Target>
+
+    <Target Name="FxCop" DependsOnTargets="Compile">
+        <Exec Command=" @(FxCop) /file:@(AssembliesToAnalyze) /directory:@(ReferencedAssemblies) /out:@(AnalysisReport) " IgnoreExitCode="true"></Exec>
+        <PropertyGroup> 
+            <FxCopCriticalErrors>0</FxCopCriticalErrors> 
+            <FxCopErrors>0</FxCopErrors> 
+            <FxCopCriticalWarnings>0</FxCopCriticalWarnings> 
+        </PropertyGroup> 
+        <XmlRead ContinueOnError="True" 
+            XmlFileName="@(AnalysisReport)" 
+            XPath="string(count(//Issue[@Level='CriticalError']))"> 
+                <Output TaskParameter="Value" PropertyName="FxCopCriticalErrors" /> 
+        </XmlRead> 
+        <XmlRead ContinueOnError="True" 
+            XmlFileName="@(AnalysisReport)" 
+            XPath="string(count(//Issue[@Level='Error']))"> 
+                <Output TaskParameter="Value" PropertyName="FxCopErrors" /> 
+        </XmlRead> 
+        <XmlRead ContinueOnError="True" 
+            XmlFileName="@(AnalysisReport)" 
+            XPath="string(count(//Issue[@Level='CriticalWarning']))"> 
+                <Output TaskParameter="Value" PropertyName="FxCopCriticalWarnings" /> 
+        </XmlRead> 
+        <Error Text="FxCop encountered $(Count) material rule violations" 
+            Condition="$(FxCopCriticalErrors) &gt; 0 or $(FxCopErrors) &gt; 0 or $(FxCopCriticalWarnings) &gt; 0" />
+    </Target>
+
+    <Target Name="StopWebsite">
+        <Exec Command="taskkill /f /im WebDev.WebServer40.exe" IgnoreExitCode="true" IgnoreStandardErrorWarningFormat="true" />
+    </Target>
+    
+    <Target Name="StartWebsite" DependsOnTargets="StopWebsite;Compile">
+        <AsyncExec Command=' "@(Cassini)" /port:9999 /path:"%(Website.FullPath)" /vpath:'/>
+    </Target>
+
+</Project>
