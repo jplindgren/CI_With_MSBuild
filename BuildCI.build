@@ -48,7 +48,7 @@
         <Exec Command=' "@(Nuget)" restore "@(SolutionFile)" '></Exec>
     </Target>
 
-    <Target Name="Compile" DependsOnTargets="Init">
+    <Target Name="Compile" DependsOnTargets="RestorePackages">
         <MSBuild Projects="@(SolutionFile)" Targets="Rebuild" Properties="OutDir=%(BuildArtifacts.FullPath);Configuration=$(Configuration)" />
     </Target>
 
