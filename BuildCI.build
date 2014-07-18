@@ -31,6 +31,10 @@
         <ReferencedAssemblies Include=".\buildartifacts\" />
         <AnalysisReport Include=".\buildartifacts\FxCopAnalysisReport.xml" />
     </ItemGroup>
+
+    <ItemGroup>
+        <Nuget Include=".\thirdparty\tools\Nuget\Nuget.exe" />
+    </ItemGroup>
     
     <Target Name="Clean">
         <RemoveDir Directories="@(BuildArtifacts)" />
@@ -38,6 +42,10 @@
 
     <Target Name="Init" DependsOnTargets="Clean">
         <MakeDir Directories="@(BuildArtifacts)" />
+    </Target>
+
+    <Target Name="RestorePackages" DependsOnTargets="Init">
+        <Exec Command=' "@(Nuget)" restore "@(SolutionFile)" '></Exec>
     </Target>
 
     <Target Name="Compile" DependsOnTargets="Init">
