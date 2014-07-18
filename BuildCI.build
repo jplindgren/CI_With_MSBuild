@@ -46,7 +46,7 @@
     </Target>
 
     <Target Name="RestorePackages" DependsOnTargets="Init">
-        <Exec Command=' "@(Nuget)" restore "@(SolutionFile)" -OutputDirectory "@NugetOutputDirectory"'></Exec>
+        <Exec Command=' "@(Nuget)" restore "@(SolutionFile)" -OutputDirectory "@(NugetOutputDirectory)"'></Exec>
     </Target>
 
     <Target Name="Compile" DependsOnTargets="RestorePackages">
