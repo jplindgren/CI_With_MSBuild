@@ -8,6 +8,8 @@
     <UsingTask AssemblyFile=".\thirdparty\tools\MSBuildCommunityTasks\MSBuild.Community.Tasks.dll" TaskName="MSBuild.Community.Tasks.XmlRead" />
     <UsingTask AssemblyFile=".\thirdparty\tools\MSBuildCommunityTasks\MSBuild.Community.Tasks.dll" TaskName="MSBuild.Community.Tasks.FxCop" />
     
+    <Import Project=".\thirdparty\tools\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets"/>
+    
     <PropertyGroup>
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     </PropertyGroup>
@@ -78,9 +80,27 @@
             XmlFileName="@(AnalysisReport)" 
             XPath="string(count(//Issue[@Level='CriticalWarning']))"> 
                 <Output TaskParameter="Value" PropertyName="FxCopCriticalWarnings" /> 
-        </XmlRead> 
+        </XmlRead>
         <Error Text="FxCop encountered $(Count) material rule violations" 
-            Condition="$(FxCopCriticalErrors) &gt; 0 or $(FxCopErrors) &gt; 0 or $(FxCopCriticalWarnings) &gt; 0" />
+            Condition="$(FxCopCriticalErrors) &gt; 30 or $(FxCopErrors) &gt; 30 or $(FxCopCriticalWarnings) &gt; 30" />
+    </Target>
+
+    <Target Name="Package" DependsOnTargets="Test; FxCop">
+        <PropertyGroup>
+            <StringDate>$([System.DateTime]::Now.ToString('yyyyMMdd'))</StringDate>
+            <ZipFileName>BuildCI</ZipFileName>
+            <NightlyBuildPath>%(BuildArtifacts.FullPath)NightlyBuild/</NightlyBuildPath>
+            <ReleasePath>@(Website)</ReleasePath>
+        </PropertyGroup>
+        <ItemGroup>
+            <ReleaseApplicationFiles Include="$(ReleasePath)\**\*.*" />
+        </ItemGroup>
+
+        <MakeDir Directories="$(NightlyBuildPath)"/>
+        <Zip Files="@(ReleaseApplicationFiles)"
+              WorkingDirectory="@(Website)"
+              ZipFileName="$(NightlyBuildPath)\$(StringDate)_$(ZipFileName).zip"
+              ZipLevel="9" />
     </Target>
 
     <Target Name="StopWebsite">
