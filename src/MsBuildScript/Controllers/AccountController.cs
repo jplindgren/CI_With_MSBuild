@@ -31,6 +31,7 @@ namespace MsBuildScript.Controllers {
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public ActionResult Login(LoginModel model, string returnUrl) {
+
             if (ModelState.IsValid && WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe)) {
                 return RedirectToLocal(returnUrl);
             }
@@ -66,6 +67,10 @@ namespace MsBuildScript.Controllers {
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public ActionResult Register(RegisterModel model) {
+            if (model == null) {
+                throw new ArgumentNullException();
+            }
+
             if (ModelState.IsValid) {
                 // Attempt to register the user
                 try {
