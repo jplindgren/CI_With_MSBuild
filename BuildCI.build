@@ -2,7 +2,7 @@
 
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" 
          ToolsVersion="4.0"
-         DefaultTargets="Test">
+         DefaultTargets="Package">
     
     <UsingTask AssemblyFile=".\thirdparty\tools\MsBuildAsyncExec\AsyncExec.dll" TaskName="AsyncExec.AsyncExec" />
     <UsingTask AssemblyFile=".\thirdparty\tools\MSBuildCommunityTasks\MSBuild.Community.Tasks.dll" TaskName="MSBuild.Community.Tasks.XmlRead" />
