@@ -68,7 +68,7 @@ namespace MsBuildScript.Controllers {
         [ValidateAntiForgeryToken]
         public ActionResult Register(RegisterModel model) {
             if (model == null) {
-                throw new ArgumentNullException();
+                throw new ArgumentNullException("model", "parametro model não pode ser nulo");
             }
 
             if (ModelState.IsValid) {
